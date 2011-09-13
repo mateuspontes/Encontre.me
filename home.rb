@@ -1,26 +1,13 @@
 require 'rubygems'
 require 'sinatra'
-#require 'twitter_oauth'
+require 'twitter_oauth'
 
-configure do
-  enable :sessions
-end
-
-get '/' do
-	erb :index
-end
-
-post '/save' do
-	"salvo"
-end
-
-=begin
 before do
 	@user = session[:user]
 
 	@client = TwitterOAuth::Client.new(
-		:consumer_key => '',
-		:consumer_secret => '',
+		:consumer_key => '99lIp0OaxjMTF1ooVnZqvw',
+		:consumer_secret => '9S1m9TOl1lnKsom689P1kVOLojyAPc6bRnnKBv5BBo',
 		:token => session[:access_token],
 		:secret => session[:secret_token]
 	)
@@ -73,4 +60,3 @@ get '/logout' do
 	session[:secret_token] = nil
 	redirect '/'
 end
-=end
