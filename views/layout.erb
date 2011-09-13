@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Encontre.me</title>
+
+		<link href="/css/estilo.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div id="container">
+            <header id="top">
+                <h1>Encontre.me</h1>
+                <p>Interaje</p>
+            </header>
+
+            <section id="content">
+				<section class="description">
+					<h3>Encontre seus amigos agora</h3>
+					<p>Marque o local onde vc est&aacute; sentado e veja quem est&aacute; perto.</p>
+				</section>
+					
+				<%= yield %>
+			</section>
+
+			<footer>
+				<h5>Encontre.me</h5>
+				<p>Criado por <a href="http://twitter.com/mateuspontes">@mateuspontes</a> e <a href="https://github.com/mateuspontes/encontre.me">[seu nome aqui]</a></p>
+			</footer>
+        </div>
+		
+		<div class="modalBg"></div>
+		
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+		<![endif]-->
+
+        <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+    </body>
+</html> 

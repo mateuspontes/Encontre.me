@@ -1,76 +1,62 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Encontre.me</title>
-
-		<link href="/css/estilo.css" rel="stylesheet" />
-    </head>
-
-    <body>
-        <div id="conteiner">
-            <header id="top">
-                <h1>Encontre.me</h1>
-                <p>Interaje</p>
-            </header>
-
-            <section id="content">
-				<section class="description">
-					<h3>Encontre seus amigos agora</h3>
-					<p>Marque o local onde vc est&aacute; sentado e veja quem est&aacute; perto.</p>
-				</section>
-					
-				<canvas id="map" height="550" width="900">
+<canvas id="map" height="550" width="900">
 					<strong>Oh! <em>#shit</em>.. Seu browser n&atilde;o suporta Canvas.. #fail</strong>
 				</canvas>
-			</section>
 
-			<footer>
-				<h5>Encontre.me</h5>
-				<p>Criado por <a href="http://twitter.com/mateuspontes">@mateuspontes</a> e <a href="https://github.com/mateuspontes/encontre.me">[seu nome aqui]</a></p>
-			</footer>
-        </div>
-		
-		<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-		<![endif]-->
-
-        <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
-		
-		<script type="text/javascript">
-		jQuery(function() {
-			var ctx = $("#map")[0].getContext('2d');
-
-			$("#map").click( function(event) {
-				position = getPosition(event);
-
-				var x = position.x;
-				var y = position.y;
-
-				console.log("x: " + x + " / " + "y: " + y);
-
-				ctx.beginPath();
-				ctx.fillRect(x-40,y-12,80,25);
+				<div id="twitter_info">
+					<form action="" method="post">
+						<label>Twitter:
+							<input type="text" id="twitter" name="twitter" value="@" />
+						</label>
+						
+						<input type="submit" value="Salvar" id="submit" /> <a href="javascript:;">cancelar</a>
+					</form>
+				</div>
 				
-			});
-		});
+				<script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+				<script type="text/javascript">
+				jQuery(function() {
+					var ctx = $("#map")[0].getContext('2d');
+					var x, y;
 
-		function getPosition(e) {
-			var targ;
-			if (!e)
-				e = window.event;
-			if (e.target)
-				targ = e.target;
-			else if (e.srcElement)
-				targ = e.srcElement;
-			if (targ.nodeType == 3) // defeat Safari bug
-				targ = targ.parentNode;
+					$("#map").click( function(event) {
+						position = getPosition(event);
 
-			var x = e.pageX - $(targ).offset().left;
-			var y = e.pageY - $(targ).offset().top;
+						this.x = position.x;
+						this.y = position.y;
 
-			return {"x": x, "y": y};
-		};
-		</script>
-    </body>
-</html> 
+						$(".modalBg").show();
+						$("#twitter_info").show();
+					});
+
+					$("#twitter_info a").click( function(event) {
+						$(".modalBg").hide();
+						$("#twitter_info").hide();
+					});
+				
+					$("#twitter_info #submit").click( function(e) {
+						e.preventDefault();
+
+						ctx.beginPath();
+						ctx.fillRect(this.x-40,this.y-12,80,25);
+						ctx.fillText("Sample String", 10, 50);  
+					});
+
+				});
+
+				function getPosition(e) {
+					var targ;
+					if (!e)
+						e = window.event;
+					if (e.target)
+						targ = e.target;
+					else if (e.srcElement)
+						targ = e.srcElement;
+					if (targ.nodeType == 3) // defeat Safari bug
+						targ = targ.parentNode;
+
+					var x = e.pageX - $(targ).offset().left;
+					var y = e.pageY - $(targ).offset().top;
+
+					return {"x": x, "y": y};
+				};
+				</script>
