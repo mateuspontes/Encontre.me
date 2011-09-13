@@ -20,12 +20,15 @@ configure do
 end
 
 get '/' do
+=begin
 	if @user
 		@user = @user
 		erb :index
 	else 
 		"<a href='/connect'>sign on</a>"
 	end
+=end
+  erb :index
 end
 
 get '/connect' do

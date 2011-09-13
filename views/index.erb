@@ -16,38 +16,18 @@
 				<script type="text/javascript">
 				jQuery(function() {
 					var ctx = $("#map")[0].getContext('2d');
-					var x, y;
 
 					$("#map").click( function(event) {
 						position = getPosition(event);
 
-						x = position.x;
-						y = position.y;
+						var x = position.x;
+						var y = position.y;
 
-						$(".modalBg").show();
-						$("#twitter_info").show();
-					});
-
-					$("#twitter_info #submit").click( function(e) {
-						e.preventDefault();
-
-						ctx.beginPath();
 						ctx.fillRect(x-40,y-12,90,25);
-						ctx.fillStyle = "white";
-						ctx.fillText("mateuspontes", x-35, y);  
-						hideTwitter();
+						//ctx.fillStyle = "white";
+						//ctx.fillText("mateuspontes", x-35, y);
 					});
 					
-					$("#twitter_info a").click( function(event) {
-						hideTwitter();
-					});
-					
-					hideTwitter = function() {
-						$("#twitter_info #twitter").val("@");
-						$(".modalBg").hide();
-						$("#twitter_info").hide();
-					}
-
 				});
 
 				function getPosition(e) {
