@@ -41,10 +41,10 @@ get '/connect' do
 end
 
 get '/auth' do
-    @access_token = @client.authorize(
-		session[:request_token],
-		session[:request_token_secret]
-	)
+  @access_token = @client.authorize(
+    session[:request_token],
+    session[:request_token_secret]
+  )
   
 	if @client.authorized?
 		session[:access_token] = @access_token.token
