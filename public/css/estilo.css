@@ -54,6 +54,9 @@ small { font-size: 11px; }
 strong, h2, h3, h4, h5, h6 { font-weight: bold; }
 em { font-style: italic; }
 
+a { color: #B13800; text-decoration: none; }
+a:hover { border-bottom: 1px solid; color: #C55000; }
+
 html,body{ margin:0px; height:100%; font: 12px Arial; background: #f9f9f9; }
 #container{ width:900px; height:100%; margin: 0 auto; position: relative; }
 
@@ -64,7 +67,8 @@ html,body{ margin:0px; height:100%; font: 12px Arial; background: #f9f9f9; }
 header, section { display:block;}
 
 #content { background: #; margin: 15px 0 0;}
-#content .description { margin: 35px 15px; }
+#content .description { margin: 35px 15px 15px; }
+#content h3 { margin: 15px; font-size: 1.5em; }
 #content .description h3 { margin: 10px 0 0; font-size: 3em; line-height: 1em; letter-spacing: -0.05em; color: #666; }
 #content .description p { font-weight: normal; color: #999; font-size: 1.8em; letter-spacing: 0.03em;}
 
@@ -78,5 +82,3 @@ header, section { display:block;}
 
 footer { background: #333; width: 98%; padding: 1%; margin-top: 15px; color: #999; }
 footer h5 { font-size: 1.4em; }
-footer a { color: #B13800; text-decoration: none; }
-footer a:hover { border-bottom: 1px solid; color: #C55000; }

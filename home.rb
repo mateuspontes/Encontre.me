@@ -6,8 +6,8 @@ before do
 	@user = session[:user]
 
 	@client = TwitterOAuth::Client.new(
-		:consumer_key => ENV['KEY'],
-		:consumer_secret => ENV['SECRET'],
+		:consumer_key => ENV['KEY'] || '99lIp0OaxjMTF1ooVnZqvw',
+		:consumer_secret => ENV['SECRET'] || '9S1m9TOl1lnKsom689P1kVOLojyAPc6bRnnKBv5BBo',
 		:token => session[:access_token],
 		:secret => session[:secret_token]
 	)
@@ -20,14 +20,11 @@ configure do
 end
 
 get '/' do
-=begin
 	if @user
 		@user = @user
-		erb :index
 	else 
-		"<a href='/connect'>sign on</a>"
+		@user = ''
 	end
-=end
   erb :index
 end
 

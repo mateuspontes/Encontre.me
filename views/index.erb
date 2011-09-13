@@ -1,3 +1,8 @@
+<% if (@user) %>
+<h3>Ol&aacute;, <% @user.nome %>! Marque seu lugar. / <a href="/logout">Sair</a></h3>
+<% else %>
+<h3>Ol&aacute;, fa&ccedil;a <a href="/connect">Login (via twitter)</a> para marcar seu lugar ;)</h3>
+<% end %>
 <canvas id="map" height="550" width="900">
 					<strong>Oh! <em>#shit</em>.. Seu browser n&atilde;o suporta Canvas.. #fail</strong>
 				</canvas>
@@ -5,17 +10,20 @@
 				<script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 				<script type="text/javascript">
 				jQuery(function() {
+
 					var ctx = $("#map")[0].getContext('2d');
 
 					$("#map").click( function(event) {
+					<% if (@user) %>
 						position = getPosition(event);
 
 						var x = position.x;
 						var y = position.y;
 
 						ctx.fillRect(x-35,y-20,70,20);
-						//ctx.fillStyle = "white";
-						//ctx.fillText("mateuspontes", x-35, y);
+					<% else %>
+						alert("Faça Login (via Twitter) para marcar seu lugar :)")
+					<% end %>
 					});
 					
 				});
