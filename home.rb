@@ -6,8 +6,8 @@ before do
 	@user = session[:user]
 
 	@client = TwitterOAuth::Client.new(
-		:consumer_key => '99lIp0OaxjMTF1ooVnZqvw',
-		:consumer_secret => '9S1m9TOl1lnKsom689P1kVOLojyAPc6bRnnKBv5BBo',
+		:consumer_key => ENV['KEY'],
+		:consumer_secret => ENV['SECRET'],
 		:token => session[:access_token],
 		:secret => session[:secret_token]
 	)
