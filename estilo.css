@@ -72,5 +72,5 @@ header, section { display:block;}
 
 footer { background: #333; width: 98%; padding: 1%; margin-top: 15px; color: #999; }
 footer h5 { font-size: 1.4em; }
-footer a { color: #BB3F01; text-decoration: none; }
-footer a:hover { border-bottom: 1px solid; color: #D76A05}
+footer a { color: #B13800; text-decoration: none; }
+footer a:hover { border-bottom: 1px solid; color: #C55000; }
