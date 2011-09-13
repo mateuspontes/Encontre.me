@@ -3,5 +3,5 @@ require 'bundler'
 
 Bundler.require
 
-require './home'
-run Home
+require 'home'
+run Sinatra::Application
