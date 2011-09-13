@@ -19,5 +19,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  json
   sinatra
   twitter_oauth

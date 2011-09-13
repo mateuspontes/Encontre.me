@@ -2,12 +2,11 @@
 
 App desenvolvida para localizar as pessoas durante palestras/eventos.
 
-Se tudo der certo, o beta será realizado hoje durante o @interaje (http://novo.interaje.com.br/eventos)
+Nao ficou pronto a tempo de usar no @interaje.. #failme
+Mas serviu para estudar canvas, sinatra, json, eventmachine, oauth e um piqueiro de coisas que entrou na pesquisa.
 
-TO-DO:
- - add framework (sinatra/rails) e banco (sqlite/mysql/pg/etc)
- - desenhar mapa de cadeiras do auditório da UFPI
- - pegar foto via twitter e exibir no "mapa"
- - melhorar o layout (=p)
+# TO-DO:
+	Tratar post de dados e salvar no BD
+	Recuperar o json e marcar os usuarios no Canvas
  
 

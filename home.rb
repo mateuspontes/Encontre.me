@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'twitter_oauth'
+require 'json'
 
 before do
 	@user = session[:user]
@@ -26,6 +27,19 @@ get '/' do
 		@user = ''
 	end
   erb :index
+end
+
+post '/save' do
+  x = params[:x]
+  y = params[:y]
+  
+  return x
+end
+
+get '/all' do
+  content_type :json
+  { :nome => 'mateuspontes', :x => '250', :y => '250' }.to_json
+  { :nome => 'caironoleto', :x => '400', :y => '250' }.to_json
 end
 
 get '/connect' do
